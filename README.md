@@ -1,6 +1,6 @@
 # ILE Config Excel
 
-## Excel Structure
+## Excel Structure {1-excel-structure}
 
 ### Tabs (Sheets)
 
@@ -61,8 +61,230 @@ The PROCESS tab is only labled as *Parse* due to the programatic transfer of dat
 
 ### Formulae (Table)
 
-There are three processing tables each labeled according to their encapsulating tab's name. Each cell in tables LINES and BUDDY contains a formula pointing to the PROCESS table. These formulae implement the processing logic as defined [[here]](#processing-logic).
+There are three processing tables each labeled according to their encapsulating tab's name. Each cell in tables LINES and BUDDY contains a formula pointing to the PROCESS table. These formulae implement the data rules as defined [[here]](#3-data-rules).
 
-## Processing Logic {processing-logic}
+## Processing Logic {2-processing-logic}
 
-Lorem ipsum.
+Excel ILE config uses macros to move data between each tab, sometimes running functions or applying formulae. The macro triggers when a cell in column A is changed, then performs several tasks such as user input collection, data manipulation across different sheets, and updating tables with new values. The code consists of one main event handler and several subroutines and functions.
+
+### ILE
+
+* **Main handler:** `Worksheet_Change`
+
+  ```vbnet
+  Private Sub Worksheet_Change(ByVal Target As Range)
+  ```
+* **Checking change target**
+
+  ```vbnet
+  If Not Intersect(Target, Me.Columns("A")) Is Nothing Then
+  ```
+
+This line checks if the changed cell is in column A. If not, the macro exits.
+
+* **Disabling Screen Updating and Calculation**
+  ```vbnet
+  Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+  ```
+
+This improves performance by preventing the screen from updating during the macro execution and disabling automatic recalculation of formulas.
+
+* **Collecting User Inputs**
+
+  ```vbnet
+  firstEntryNo = GetUserInput("Enter the next available ILE Entry Number", "ILE  Entry No.")
+  firstGlobalDimCode = GetUserInput("Enter the Global Dimension 1 Code", "Global Dimension 1 Code")
+  currencyCode = GetUserInput("Enter the currency code: ", "Currency Code")
+  ```
+
+The macro prompts the user for three inputs: the next available ILE Entry Number, Global Dimension 1 Code, and currency code.
+
+* **Updating Cells in the ****PROCESS**** table**
+
+  ```vbnet
+  Sheets("PROCESS").Range("N2").Formula = "=""" & firstGlobalDimCode & """"
+  Sheets("PROCESS").Range("BW2").Formula = "=""" & currencyCode & """"
+  ```
+
+The macro updates cells N2 and BW2 in the PROCESS table with the user-provided Global Dimension 1 Code and Currency Code, respectively.
+
+* **Processing Data**
+
+  ```vbnet
+  ProcessData
+  ```
+
+The `ProcessData` subroutine is called to perform data processing and manipulation.
+
+* **Extending the LINES and BUDDY tables**
+
+  ```vbnet
+  ExtendTableWithFormulas "LINES", "lines"
+  ExtendTableWithFormulas "BUDDY", "buddy"
+  ```
+
+The `ExtendTableWithFormulas` subroutine is called twice to ensure the formulas in the LINES and BUDDY tables are extended to match the data size.
+
+* **Calculate Tables**
+
+  ```vbnet
+  Set processSheet = ThisWorkbook.Sheets("PROCESS")
+  Set processTable = processSheet.ListObjects("process")
+  Set linesSheet = ThisWorkbook.Sheets("LINES")
+  Set linesTable = linesSheet.ListObjects("lines")
+  Set buddySheet = ThisWorkbook.Sheets("BUDDY")
+  Set buddyTable = buddySheet.ListObjects("buddy")
+
+  processTable.Range.Calculate
+  linesTable.Range.Calculate
+  buddyTable.Range.Calculate
+  ```
+
+References to the process, lines, and buddy sheets/tables are set. The `Calculate` method is called on the ranges of these tables to refresh any calculations/formulas.
+
+* **Generate Ouput Data**
+
+  ```vbnet
+  GenerateOutputData
+  ```
+
+The `GenerateOutputData` subroutine is called to produce the final output data by combining data from the “LINES” and “BUDDY” tables.
+
+* **Updating Entry Numbers**
+
+  ```vbnet
+  UpdateOutputTableAndStore firstEntryNo
+  ```
+
+This subroutine updates entry numbers in the **OUTPUT** table and stores a mapping of these numbers in the Entry No. Map tab.
+
+* **Informing the User**
+
+  ```vbnet
+  MsgBox "Processing Complete", vbInformation
+  ```
+
+A message box notifies the user that the processing is complete.
+
+* **Re-enabling Screen Updating and Calculation**
+
+  ```
+  Application.ScreenUpdating = True
+  Application.Calculation = xlCalculationAutomatic
+  ```
+
+Screen updating and automatic calculations are re-enabled.
+
+### VE
+
+* **Main handler:** `Worksheet_Change`
+
+  ```vbnet
+  Private Sub Worksheet_Change(ByVal Target As Range)
+  ```
+* **Checking change target**
+
+  ```vbnet
+  If Not Intersect(Target, Me.Columns("A")) Is Nothing Then
+  ```
+
+This line checks if the changed cell is in column A. If not, the macro exits.
+
+* **Disabling Screen Updating and Calculation**
+  ```vbnet
+  Application.ScreenUpdating = False
+  Application.Calculation = xlCalculationManual
+  ```
+
+This improves performance by preventing the screen from updating during the macro execution and disabling automatic recalculation of formulas.
+
+* **Collecting User Inputs**
+
+  ```vbnet
+  firstEntryNo = GetUserInput("Enter the next available VE Entry Number", "VE  Entry No.")
+  firstGlobalDimCode = GetUserInput("Enter the Global Dimension 1 Code", "Global Dimension 1 Code")
+  ```
+
+The macro prompts the user for three inputs: the next available VE Entry Number and Global Dimension 1 Code.
+
+* **Updating Cells in the ****PROCESS**** table**
+
+  ```vbnet
+  Sheets("PROCESS").Range("V2").Formula = "=""" & firstGlobalDimCode & """"
+  ```
+
+The macro updates cell V2 in the PROCESS table with the user-provided Global Dimension 1 Code.
+
+* **Processing Data**
+
+  ```vbnet
+  ProcessData
+  ```
+
+The `ProcessData` subroutine is called to perform data processing and manipulation.
+
+* **Extending the LINES and BUDDY tables**
+
+  ```vbnet
+  ExtendTableWithFormulas "LINES", "lines"
+  ExtendTableWithFormulas "BUDDY", "buddy"
+  ```
+
+The `ExtendTableWithFormulas` subroutine is called twice to ensure the formulas in the LINES and BUDDY tables are extended to match the data size.
+
+* **Calculate Tables**
+
+  ```vbnet
+  Set processSheet = ThisWorkbook.Sheets("PROCESS")
+  Set processTable = processSheet.ListObjects("process")
+  Set linesSheet = ThisWorkbook.Sheets("LINES")
+  Set linesTable = linesSheet.ListObjects("lines")
+  Set buddySheet = ThisWorkbook.Sheets("BUDDY")
+  Set buddyTable = buddySheet.ListObjects("buddy")
+
+  processTable.Range.Calculate
+  linesTable.Range.Calculate
+  buddyTable.Range.Calculate
+  ```
+
+References to the process, lines, and buddy sheets/tables are set. The `Calculate` method is called on the ranges of these tables to refresh any calculations/formulas.
+
+* **Generate Ouput Data**
+
+  ```vbnet
+  GenerateOutputData
+  ```
+
+The `GenerateOutputData` subroutine is called to produce the final output data by combining data from the “LINES” and “BUDDY” tables.
+
+* **Updating Entry Numbers**
+
+  ```vbnet
+  UpdateOutputTableAndStore firstEntryNo
+  ```
+
+This subroutine updates entry numbers in the **OUTPUT** table and stores a mapping of these numbers in the Entry No. Map tab.
+
+* **Informing the User**
+
+  ```vbnet
+  MsgBox "Processing Complete", vbInformation
+  ```
+
+A message box notifies the user that the processing is complete.
+
+* **Re-enabling Screen Updating and Calculation**
+
+  ```
+  Application.ScreenUpdating = True
+  Application.Calculation = xlCalculationAutomatic
+  ```
+
+Screen updating and automatic calculations are re-enabled.
+
+### Subroutines
+
+Lorem Ipsum.
+
+## Data Rules {3-data-rules}
