@@ -61,8 +61,8 @@ The PROCESS tab is only labled as *Parse* due to the programatic transfer of dat
 
 ### Formulae (Table)
 
-There are three processing tables each labeled according to their encapsulating tab's name. Each cell in tables LINES and BUDDY contains a formula pointing to the PROCESS table. These formulae implement the processing logic as defined [[here]](#processing-logic).
+There are three processing tables each labeled according to their encapsulating tab's name. Each cell in tables LINES and BUDDY contains a formula pointing to the PROCESS table. These formulae implement the processing logic as defined below.
 
-## Processing Logic {processing-logic}
+## Processing Logic
 
 Lorem ipsum.
