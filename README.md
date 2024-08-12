@@ -1,6 +1,6 @@
 # ILE Config Excel
 
-## Excel Structure {1-excel-structure}
+## Excel Structure
 
 ### Tabs (Sheets)
 
@@ -63,7 +63,7 @@ The PROCESS tab is only labled as *Parse* due to the programatic transfer of dat
 
 There are three processing tables each labeled according to their encapsulating tab's name. Each cell in tables LINES and BUDDY contains a formula pointing to the PROCESS table. These formulae implement the data rules as defined [[here]](#3-data-rules).
 
-## Processing Logic {2-processing-logic}
+## Processing Logic
 
 Excel ILE config uses macros to move data between each tab, sometimes running functions or applying formulae. The macro triggers when a cell in column A is changed, then performs several tasks such as user input collection, data manipulation across different sheets, and updating tables with new values. The code consists of one main event handler and several subroutines and functions.
 
@@ -287,4 +287,4 @@ Screen updating and automatic calculations are re-enabled.
 
 Lorem Ipsum.
 
-## Data Rules {3-data-rules}
+## Data Rules
