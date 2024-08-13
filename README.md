@@ -2,11 +2,11 @@
 
 ## Table of Contents
 
-1. **`<a href="#1-excel-structure">`Excel Structure`</a>`**
+1. **<a href="#1-excel-structure">Excel Structure</a>**
    1. Tabs (Sheets)
    2. Parse (Blank)
    3. Formulae
-2. **`<a href="#2-processing-logic">`Processing Logic`</a>`**
+2. **<a href="#2-processing-logic">Processing Logic</a>**
    1. ILE
    2. VE
    3. Subroutines
@@ -16,7 +16,7 @@
       4. GenerateOutputData
       5. ExtendTableWithFormulas
       6. UpdateOutputTableAndStore
-3. **`<a href="#3-data-rules">`Data Rules`</a>`**
+3. **<a href="#3-data-rules">Data Rules</a>**
    1. ILE
    2. VE
 
