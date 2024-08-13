@@ -1,5 +1,25 @@
 # ILE Config Excel
 
+## Table of Contents
+
+1. **Excel Structure**
+   1. Tabs (Sheets)
+   2. Parse (Blank)
+   3. Formulae
+2. **Processing Logic**
+   1. ILE
+   2. VE
+   3. Subroutines
+      1. ProcessData
+      2. ConvertToDate
+      3. GetUserInput
+      4. GenerateOutputData
+      5. ExtendTableWithFormulas
+      6. UpdateOutputTableAndStore
+3. **Data Rules**
+   1. ILE
+   2. VE
+
 <h2 id="1-excel-structure">Excel Structure</h2>
 
 ### Tabs (Sheets)
@@ -418,7 +438,7 @@ Combines data from two tables (“LINES” and “BUDDY”) into a third table (
            Next j
            outputRow = outputRow + 1
        End If
-     
+
        If i <= rowCount2 Then
            For j = 1 To table2.ListColumns.Count
                arrOutput(outputRow, j) = table2.DataBodyRange(i, j).Value
