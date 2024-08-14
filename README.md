@@ -572,7 +572,7 @@ The LINES and BUDDY tables do contain formulae for every field in the formula ro
 
 Once the PROCESS table is populated, `ExtendTableWithFormulas` is called on both the LINES and BUDDY tables which repeats the formula row to match the number of rows in the PROCESS table.
 
-A formula can either be a relative reference (e.g. [@[field_name]]) to a field in the PROCESS table (no manipulation/calculation) or an implementation of a specified rule.
+A formula can either be a relative reference (e.g. [@[field_name]]) to a field in the PROCESS table (no manipulation/calculation), an implementation of a specific rule, or in some cases an absolute value.
 
 The rules for each field in both ILE and VE are listed below.
 
