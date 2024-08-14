@@ -568,7 +568,7 @@ Formulae are used to enforce data rules in both ILE and VE; the PROCESS, LINES a
 
 The PROCESS table does not contain formulae for every field in the formula row, only the calculation fields; every other field is populated with input data after `ProcessData` is called.
 
-The LINES and BUDDY tables do contain formulae for every field in the formula row, every formula points to a field in the PROCESS table.
+The LINES and BUDDY tables do contain formulae for every field in the formula row.
 
 Once the PROCESS table is populated, `ExtendTableWithFormulas` is called on both the LINES and BUDDY tables which repeats the formula row to match the number of rows in the PROCESS table.
 
