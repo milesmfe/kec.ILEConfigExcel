@@ -582,91 +582,91 @@ The rules for each field in both ILE and VE are listed below.
 
 | **Field**            | **Calculation**                      |
 | -------------------------- | ------------------------------------------ |
-| Entry No.                  | Direct Reference                           |
-| Item No.                   | Direct Reference                           |
-| Posting Date               | Direct Reference                           |
-| Entry Type                 | Direct Reference                           |
-| Source No.                 | Direct Reference                           |
-| Document No.               | Direct Reference                           |
-| Description                | Direct Reference                           |
+| Entry No.                  | Relative Reference                           |
+| Item No.                   | Relative Reference                           |
+| Posting Date               | Relative Reference                           |
+| Entry Type                 | Relative Reference                           |
+| Source No.                 | Relative Reference                           |
+| Document No.               | Relative Reference                           |
+| Description                | Relative Reference                           |
 | Location Code              | Always = "Y-HISTORY"                       |
-| Quantity                   | Direct Reference                           |
-| Remaining Quantity         | Direct Reference                           |
-| Invoiced Quantity          | Direct Reference                           |
-| Applies-to Entry           | Direct Reference                           |
-| Open                       | Direct Reference                           |
-| Global Dimension 1 Code    | Direct Reference (Populated by user input) |
-| Global Dimension 2 Code    | Direct Reference                           |
-| Positive                   | Direct Reference                           |
-| Source Type                | Direct Reference                           |
-| Drop Shipment              | Direct Reference                           |
-| Country/Region Code        | Direct Reference                           |
-| Document Date              | Direct Reference                           |
-| Area                       | Direct Reference                           |
-| No. Series                 | Direct Reference                           |
-| Document Type              | Direct Reference                           |
-| Document Line No.          | Direct Reference                           |
-| Job Purchase               | Direct Reference                           |
-| Qty. per Unit of Measure   | Direct Reference                           |
-| Unit of Measure Code       | Direct Reference                           |
-| Derived from Blanket Order | Direct Reference                           |
-| Out-of-Stock Substitution  | Direct Reference                           |
-| Item Category Code         | Direct Reference                           |
-| Nonstock                   | Direct Reference                           |
-| Product Group Code         | Direct Reference                           |
-| Completely Invoiced        | Direct Reference                           |
-| Last Invoice Date          | Direct Reference                           |
-| Applied Entry to Adjust    | Direct Reference                           |
-| Correction                 | Direct Reference                           |
-| Shipped Qty. Not Returned  | Direct Reference                           |
-| Prod. Order Comp. Line No. | Direct Reference                           |
-| Item Tracking              | Direct Reference                           |
-| Currency Code              | Direct Reference (Populated by user input) |
+| Quantity                   | Relative Reference                           |
+| Remaining Quantity         | Relative Reference                           |
+| Invoiced Quantity          | Relative Reference                           |
+| Applies-to Entry           | Relative Reference                           |
+| Open                       | Relative Reference                           |
+| Global Dimension 1 Code    | Relative Reference (Populated by user input) |
+| Global Dimension 2 Code    | Relative Reference                           |
+| Positive                   | Relative Reference                           |
+| Source Type                | Relative Reference                           |
+| Drop Shipment              | Relative Reference                           |
+| Country/Region Code        | Relative Reference                           |
+| Document Date              | Relative Reference                           |
+| Area                       | Relative Reference                           |
+| No. Series                 | Relative Reference                           |
+| Document Type              | Relative Reference                           |
+| Document Line No.          | Relative Reference                           |
+| Job Purchase               | Relative Reference                           |
+| Qty. per Unit of Measure   | Relative Reference                           |
+| Unit of Measure Code       | Relative Reference                           |
+| Derived from Blanket Order | Relative Reference                           |
+| Out-of-Stock Substitution  | Relative Reference                           |
+| Item Category Code         | Relative Reference                           |
+| Nonstock                   | Relative Reference                           |
+| Product Group Code         | Relative Reference                           |
+| Completely Invoiced        | Relative Reference                           |
+| Last Invoice Date          | Relative Reference                           |
+| Applied Entry to Adjust    | Relative Reference                           |
+| Correction                 | Relative Reference                           |
+| Shipped Qty. Not Returned  | Relative Reference                           |
+| Prod. Order Comp. Line No. | Relative Reference                           |
+| Item Tracking              | Relative Reference                           |
+| Currency Code              | Relative Reference (Populated by user input) |
 
 #### Buddy
 
 | **Field**            | **Calculation**                                       |
 | -------------------------- | ----------------------------------------------------------- |
-| Entry No.                  | Direct Reference                                            |
-| Item No.                   | Direct Reference                                            |
-| Posting Date               | Direct Reference                                            |
+| Entry No.                  | Relative Reference                                            |
+| Item No.                   | Relative Reference                                            |
+| Posting Date               | Relative Reference                                            |
 | Entry Type                 | (IF Quantity < 0, "Negative" ELSE "Positive") + " Adjmt." |
-| Source No.                 | Direct Reference                                            |
-| Document No.               | Direct Reference                                            |
-| Description                | Direct Reference                                            |
+| Source No.                 | Relative Reference                                            |
+| Document No.               | Relative Reference                                            |
+| Description                | Relative Reference                                            |
 | Location Code              | Always = "Y-HISTORY"                                        |
 | Quantity                   | Quantity * -1                                               |
 | Remaining Quantity         | Remaining Quantity * -1                                     |
 | Invoiced Quantity          | Invoiced Quantity * -1                                      |
-| Applies-to Entry           | Direct Reference                                            |
-| Open                       | Direct Reference                                            |
-| Global Dimension 1 Code    | Direct Reference (Populated by user input)                  |
-| Global Dimension 2 Code    | Direct Reference                                            |
-| Positive                   | Direct Reference                                            |
-| Source Type                | Direct Reference                                            |
-| Drop Shipment              | Direct Reference                                            |
-| Country/Region Code        | Direct Reference                                            |
-| Document Date              | Direct Reference                                            |
-| Area                       | Direct Reference                                            |
-| No. Series                 | Direct Reference                                            |
-| Document Type              | Direct Reference                                            |
-| Document Line No.          | Direct Reference                                            |
-| Job Purchase               | Direct Reference                                            |
-| Qty. per Unit of Measure   | Direct Reference                                            |
-| Unit of Measure Code       | Direct Reference                                            |
-| Derived from Blanket Order | Direct Reference                                            |
-| Out-of-Stock Substitution  | Direct Reference                                            |
-| Item Category Code         | Direct Reference                                            |
-| Nonstock                   | Direct Reference                                            |
-| Product Group Code         | Direct Reference                                            |
-| Completely Invoiced        | Direct Reference                                            |
-| Last Invoice Date          | Direct Reference                                            |
-| Applied Entry to Adjust    | Direct Reference                                            |
-| Correction                 | Direct Reference                                            |
-| Shipped Qty. Not Returned  | Direct Reference                                            |
-| Prod. Order Comp. Line No. | Direct Reference                                            |
-| Item Tracking              | Direct Reference                                            |
-| Currency Code              | Direct Reference (Populated by user input)                  |
+| Applies-to Entry           | Relative Reference                                            |
+| Open                       | Relative Reference                                            |
+| Global Dimension 1 Code    | Relative Reference (Populated by user input)                  |
+| Global Dimension 2 Code    | Relative Reference                                            |
+| Positive                   | Relative Reference                                            |
+| Source Type                | Relative Reference                                            |
+| Drop Shipment              | Relative Reference                                            |
+| Country/Region Code        | Relative Reference                                            |
+| Document Date              | Relative Reference                                            |
+| Area                       | Relative Reference                                            |
+| No. Series                 | Relative Reference                                            |
+| Document Type              | Relative Reference                                            |
+| Document Line No.          | Relative Reference                                            |
+| Job Purchase               | Relative Reference                                            |
+| Qty. per Unit of Measure   | Relative Reference                                            |
+| Unit of Measure Code       | Relative Reference                                            |
+| Derived from Blanket Order | Relative Reference                                            |
+| Out-of-Stock Substitution  | Relative Reference                                            |
+| Item Category Code         | Relative Reference                                            |
+| Nonstock                   | Relative Reference                                            |
+| Product Group Code         | Relative Reference                                            |
+| Completely Invoiced        | Relative Reference                                            |
+| Last Invoice Date          | Relative Reference                                            |
+| Applied Entry to Adjust    | Relative Reference                                            |
+| Correction                 | Relative Reference                                            |
+| Shipped Qty. Not Returned  | Relative Reference                                            |
+| Prod. Order Comp. Line No. | Relative Reference                                            |
+| Item Tracking              | Relative Reference                                            |
+| Currency Code              | Relative Reference (Populated by user input)                  |
 
 ### VE
 
@@ -674,114 +674,114 @@ The rules for each field in both ILE and VE are listed below.
 
 | **Field**                | **Calculation**                                                                                                             |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| Entry No.                      | Direct Reference                                                                                                                  |
-| Item No.                       | Direct Reference                                                                                                                  |
-| Posting Date                   | Direct Reference                                                                                                                  |
-| Item Ledger Entry Type         | Direct Reference                                                                                                                  |
+| Entry No.                      | Relative Reference                                                                                                                  |
+| Item No.                       | Relative Reference                                                                                                                  |
+| Posting Date                   | Relative Reference                                                                                                                  |
+| Item Ledger Entry Type         | Relative Reference                                                                                                                  |
 | Source No.                     | LOOKUP in Customer Map, NO MATCH = Source No.                                                                                    |
-| Document No.                   | Direct Reference                                                                                                                  |
-| Description                    | Direct Reference                                                                                                                  |
+| Document No.                   | Relative Reference                                                                                                                  |
+| Description                    | Relative Reference                                                                                                                  |
 | Location Code                  | Always = "Y-HISTORY"                                                                                                              |
-| Inventory Posting Group        | Direct Reference                                                                                                                  |
-| Source Posting Group           | Direct Reference                                                                                                                  |
-| Item Ledger Entry No.          | Direct Reference                                                                                                                  |
-| Valued Quantity                | Direct Reference                                                                                                                  |
-| Item Ledger Entry Quantity     | Direct Reference                                                                                                                  |
-| Invoiced Quantity              | Direct Reference                                                                                                                  |
-| Cost per Unit                  | Direct Reference                                                                                                                  |
+| Inventory Posting Group        | Relative Reference                                                                                                                  |
+| Source Posting Group           | Relative Reference                                                                                                                  |
+| Item Ledger Entry No.          | Relative Reference                                                                                                                  |
+| Valued Quantity                | Relative Reference                                                                                                                  |
+| Item Ledger Entry Quantity     | Relative Reference                                                                                                                  |
+| Invoiced Quantity              | Relative Reference                                                                                                                  |
+| Cost per Unit                  | Relative Reference                                                                                                                  |
 | Sales Amount (Actual)          | IF Sales Amount (Actual) CZK = 0 AND Sales Amount (Expected) CZK <> 0, Sales Amount (Expected) CZK ELSE Sales Amount (Actual) CZK |
-| Salespers./Purch. Code         | Direct Reference                                                                                                                  |
+| Salespers./Purch. Code         | Relative Reference                                                                                                                  |
 | Discount Amount                | IF Sales Amount (Actual) = 0, 0 ELSE Discount Amount CZK                                                                          |
-| User ID                        | Direct Reference                                                                                                                  |
-| Source Code                    | Direct Reference                                                                                                                  |
-| Applies-to Entry               | Direct Reference                                                                                                                  |
-| Global Dimension 1 Code        | Direct Reference (Populated by user input)                                                                                        |
-| Global Dimension 2 Code        | Direct Reference                                                                                                                  |
-| Source Type                    | Direct Reference                                                                                                                  |
+| User ID                        | Relative Reference                                                                                                                  |
+| Source Code                    | Relative Reference                                                                                                                  |
+| Applies-to Entry               | Relative Reference                                                                                                                  |
+| Global Dimension 1 Code        | Relative Reference (Populated by user input)                                                                                        |
+| Global Dimension 2 Code        | Relative Reference                                                                                                                  |
+| Source Type                    | Relative Reference                                                                                                                  |
 | Cost Amount (Actual)           | IF Cost Amount (Actual) CZK = 0 AND Cost Amount (Expected) CZK <> 0, Cost Amount (Expected) CZK ELSE Cost Amount (Actual) CZK)    |
-| Cost Posted to G/L             | Direct Reference                                                                                                                  |
-| Drop Shipment                  | Direct Reference                                                                                                                  |
-| Gen. Bus. Posting Group        | Direct Reference                                                                                                                  |
-| Gen. Prod. Posting Group       | Direct Reference                                                                                                                  |
-| Document Date                  | Direct Reference                                                                                                                  |
+| Cost Posted to G/L             | Relative Reference                                                                                                                  |
+| Drop Shipment                  | Relative Reference                                                                                                                  |
+| Gen. Bus. Posting Group        | Relative Reference                                                                                                                  |
+| Gen. Prod. Posting Group       | Relative Reference                                                                                                                  |
+| Document Date                  | Relative Reference                                                                                                                  |
 | Cost Amount (Actual) (ACY)     | Cost Amount (Actual)                                                                                                              |
-| Cost Posted to G/L (ACY)       | Direct Reference                                                                                                                  |
-| Cost per Unit (ACY)            | Direct Reference                                                                                                                  |
-| Document Type                  | Direct Reference                                                                                                                  |
-| Document Line No.              | Direct Reference                                                                                                                  |
-| Expected Cost                  | Direct Reference                                                                                                                  |
-| Valued By Average Cost         | Direct Reference                                                                                                                  |
-| Partial Revaluation            | Direct Reference                                                                                                                  |
-| Inventoriable                  | Direct Reference                                                                                                                  |
-| Valuation Date                 | Direct Reference                                                                                                                  |
-| Entry Type                     | Direct Reference                                                                                                                  |
-| Purchase Amount (Actual)       | Direct Reference                                                                                                                  |
-| Purchase Amount (Expected)     | Direct Reference                                                                                                                  |
-| Sales Amount (Expected)        | Direct Reference                                                                                                                  |
+| Cost Posted to G/L (ACY)       | Relative Reference                                                                                                                  |
+| Cost per Unit (ACY)            | Relative Reference                                                                                                                  |
+| Document Type                  | Relative Reference                                                                                                                  |
+| Document Line No.              | Relative Reference                                                                                                                  |
+| Expected Cost                  | Relative Reference                                                                                                                  |
+| Valued By Average Cost         | Relative Reference                                                                                                                  |
+| Partial Revaluation            | Relative Reference                                                                                                                  |
+| Inventoriable                  | Relative Reference                                                                                                                  |
+| Valuation Date                 | Relative Reference                                                                                                                  |
+| Entry Type                     | Relative Reference                                                                                                                  |
+| Purchase Amount (Actual)       | Relative Reference                                                                                                                  |
+| Purchase Amount (Expected)     | Relative Reference                                                                                                                  |
+| Sales Amount (Expected)        | Relative Reference                                                                                                                  |
 | Cost Amount (Expected)         | IF Cost Amount (Actual) CZK = 0 AND Cost Amount (Expected) CZK <> 0, 0 ELSE Cost Amount (Expected) CZK                            |
-| Cost Amount (Non-Invtbl.)      | Direct Reference                                                                                                                  |
+| Cost Amount (Non-Invtbl.)      | Relative Reference                                                                                                                  |
 | Cost Amount (Expected) (ACY)   | Cost Amount (Expected)                                                                                                            |
-| Cost Amount (Non-Invtbl.)(ACY) | Direct Reference                                                                                                                  |
-| Expected Cost Posted to G/L    | Direct Reference                                                                                                                  |
-| Exp. Cost Posted to G/L (ACY)  | Direct Reference                                                                                                                  |
-| Adjustment                     | Direct Reference                                                                                                                  |
-| Average Cost Exception         | Direct Reference                                                                                                                  |
-| Type                           | Direct Reference                                                                                                                  |
+| Cost Amount (Non-Invtbl.)(ACY) | Relative Reference                                                                                                                  |
+| Expected Cost Posted to G/L    | Relative Reference                                                                                                                  |
+| Exp. Cost Posted to G/L (ACY)  | Relative Reference                                                                                                                  |
+| Adjustment                     | Relative Reference                                                                                                                  |
+| Average Cost Exception         | Relative Reference                                                                                                                  |
+| Type                           | Relative Reference                                                                                                                  |
 
 #### Buddy
 
 | **Field**                | **Calculation**                                                                                                           |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| Entry No.                      | Direct Reference                                                                                                                |
-| Item No.                       | Direct Reference                                                                                                                |
-| Posting Date                   | Direct Reference                                                                                                                |
+| Entry No.                      | Relative Reference                                                                                                                |
+| Item No.                       | Relative Reference                                                                                                                |
+| Posting Date                   | Relative Reference                                                                                                                |
 | Item Ledger Entry Type         | (IF Valued Quantity >= 0, "Negative" ELSE "Positive") + "Adjmt."                                                                |
 | Source No.                     | LOOKUP in Customer Map, NO MATCH = Source No.                                                                                  |
-| Document No.                   | Direct Reference                                                                                                                |
-| Description                    | Direct Reference                                                                                                                |
+| Document No.                   | Relative Reference                                                                                                                |
+| Description                    | Relative Reference                                                                                                                |
 | Location Code                  | Always = "Y-HISTORY"                                                                                                            |
-| Inventory Posting Group        | Direct Reference                                                                                                                |
-| Source Posting Group           | Direct Reference                                                                                                                |
-| Item Ledger Entry No.          | Direct Reference                                                                                                                |
+| Inventory Posting Group        | Relative Reference                                                                                                                |
+| Source Posting Group           | Relative Reference                                                                                                                |
+| Item Ledger Entry No.          | Relative Reference                                                                                                                |
 | Valued Quantity                | Valued Quantity * -1                                                                                                            |
 | Item Ledger Entry Quantity     | Item Ledger Entry Quantity * -1                                                                                                 |
 | Invoiced Quantity              | Invoiced Quantity * -1                                                                                                          |
-| Cost per Unit                  | Direct Reference                                                                                                                |
+| Cost per Unit                  | Relative Reference                                                                                                                |
 | Sales Amount (Actual)          | Always = 0                                                                                                                      |
-| Salespers./Purch. Code         | Direct Reference                                                                                                                |
+| Salespers./Purch. Code         | Relative Reference                                                                                                                |
 | Discount Amount                | IF Sales Amount (Actual) = 0, 0 ELSE Discount Amount CZK                                                                        |
-| User ID                        | Direct Reference                                                                                                                |
-| Source Code                    | Direct Reference                                                                                                                |
-| Applies-to Entry               | Direct Reference                                                                                                                |
-| Global Dimension 1 Code        | Direct Reference (Populated by user input)                                                                                      |
-| Global Dimension 2 Code        | Direct Reference                                                                                                                |
-| Source Type                    | Direct Reference                                                                                                                |
+| User ID                        | Relative Reference                                                                                                                |
+| Source Code                    | Relative Reference                                                                                                                |
+| Applies-to Entry               | Relative Reference                                                                                                                |
+| Global Dimension 1 Code        | Relative Reference (Populated by user input)                                                                                      |
+| Global Dimension 2 Code        | Relative Reference                                                                                                                |
+| Source Type                    | Relative Reference                                                                                                                |
 | Cost Amount (Actual)           | (IF Cost Amount (Actual) CZK = 0 AND Cost Amount (Expected) CZK <> 0, Cost Amount (Expected) CZK ELSE Cost Amount (Actual) CZK) |
 | Cost Posted to G/L             | Cost Posted to G/L * -1                                                                                                         |
-| Drop Shipment                  | Direct Reference                                                                                                                |
-| Gen. Bus. Posting Group        | Direct Reference                                                                                                                |
-| Gen. Prod. Posting Group       | Direct Reference                                                                                                                |
-| Document Date                  | Direct Reference                                                                                                                |
+| Drop Shipment                  | Relative Reference                                                                                                                |
+| Gen. Bus. Posting Group        | Relative Reference                                                                                                                |
+| Gen. Prod. Posting Group       | Relative Reference                                                                                                                |
+| Document Date                  | Relative Reference                                                                                                                |
 | Cost Amount (Actual) (ACY)     | Cost Amount (Actual) * -1                                                                                                       |
-| Cost Posted to G/L (ACY)       | Direct Reference                                                                                                                |
-| Cost per Unit (ACY)            | Direct Reference                                                                                                                |
-| Document Type                  | Direct Reference                                                                                                                |
-| Document Line No.              | Direct Reference                                                                                                                |
-| Expected Cost                  | Direct Reference                                                                                                                |
-| Valued By Average Cost         | Direct Reference                                                                                                                |
-| Partial Revaluation            | Direct Reference                                                                                                                |
-| Inventoriable                  | Direct Reference                                                                                                                |
-| Valuation Date                 | Direct Reference                                                                                                                |
-| Entry Type                     | Direct Reference                                                                                                                |
-| Purchase Amount (Actual)       | Direct Reference                                                                                                                |
-| Purchase Amount (Expected)     | Direct Reference                                                                                                                |
+| Cost Posted to G/L (ACY)       | Relative Reference                                                                                                                |
+| Cost per Unit (ACY)            | Relative Reference                                                                                                                |
+| Document Type                  | Relative Reference                                                                                                                |
+| Document Line No.              | Relative Reference                                                                                                                |
+| Expected Cost                  | Relative Reference                                                                                                                |
+| Valued By Average Cost         | Relative Reference                                                                                                                |
+| Partial Revaluation            | Relative Reference                                                                                                                |
+| Inventoriable                  | Relative Reference                                                                                                                |
+| Valuation Date                 | Relative Reference                                                                                                                |
+| Entry Type                     | Relative Reference                                                                                                                |
+| Purchase Amount (Actual)       | Relative Reference                                                                                                                |
+| Purchase Amount (Expected)     | Relative Reference                                                                                                                |
 | Sales Amount (Expected)        | Always = 0                                                                                                                      |
 | Cost Amount (Expected)         | (IF Cost Amount (Actual) CZK = 0 AND Cost Amount (Expected) CZK <> 0, 0 ELSE Cost Amount (Expected) CZK) * -1                   |
-| Cost Amount (Non-Invtbl.)      | Direct Reference                                                                                                                |
+| Cost Amount (Non-Invtbl.)      | Relative Reference                                                                                                                |
 | Cost Amount (Expected) (ACY)   | Cost Amount (Expected) * -1                                                                                                     |
-| Cost Amount (Non-Invtbl.)(ACY) | Direct Reference                                                                                                                |
-| Expected Cost Posted to G/L    | Direct Reference                                                                                                                |
-| Exp. Cost Posted to G/L (ACY)  | Direct Reference                                                                                                                |
-| Adjustment                     | Direct Reference                                                                                                                |
-| Average Cost Exception         | Direct Reference                                                                                                                |
-| Type                           | Direct Reference                                                                                                                |
+| Cost Amount (Non-Invtbl.)(ACY) | Relative Reference                                                                                                                |
+| Expected Cost Posted to G/L    | Relative Reference                                                                                                                |
+| Exp. Cost Posted to G/L (ACY)  | Relative Reference                                                                                                                |
+| Adjustment                     | Relative Reference                                                                                                                |
+| Average Cost Exception         | Relative Reference                                                                                                                |
+| Type                           | Relative Reference                                                                                                                |
